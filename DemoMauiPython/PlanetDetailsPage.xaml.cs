@@ -9,9 +9,8 @@ public partial class PlanetDetailsPage : ContentPage
     {
         InitializeComponent();
         planet.SpacePlotter = pythonEnvironment.SpacePlotter(); // TODO : Find a better way to link the resources
-
-        // Get the background color of the page
-        planet.SpacePlotter.SetTheme(BackgroundColor.ToHex());
+        // TODO: Find the text color from the styles
+        planet.SpacePlotter.SetTheme(BackgroundColor.ToHex(), "#FFFFFF");
 
         BindingContext = planet;
     }
