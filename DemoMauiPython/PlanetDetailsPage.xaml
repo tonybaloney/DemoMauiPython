@@ -90,15 +90,16 @@
                 <!-- Planet Gallery -->
                 <Label
                     Style="{StaticResource PlanetHeaderSubtitleStyle}"
-                    Text="Gallery" />
+                    Text="Current Position" />
                 
                 <!-- Dynamic image render -->
                 <Image
                     Source="{Binding PlanetImageSource}"
-                    Aspect="AspectFit"
+                    Aspect="Fill"
                     HorizontalOptions="Fill"
-                    HeightRequest="240"
-                    Margin="24,0" />
+                    WidthRequest="500"
+                    HeightRequest="500"
+                    Margin="0,0" />
 
             </VerticalStackLayout>
 

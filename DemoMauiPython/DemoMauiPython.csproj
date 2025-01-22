@@ -78,10 +78,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CSnakes.Runtime" Version="1.0.25" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
-		<ProjectReference Include="..\..\csnakes\src\CSnakes.Runtime\CSnakes.Runtime.csproj" />
-		<ProjectReference Include="..\..\csnakes\src\CSnakes.SourceGeneration\CSnakes.SourceGeneration.csproj" ReferenceOutputAssembly="false" OutputItemType="Analyzer" />
+		<PackageReference Include="python" Version="3.12.8" />
 	</ItemGroup>
 
 	<ItemGroup>

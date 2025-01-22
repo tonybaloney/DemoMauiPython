@@ -12,7 +12,7 @@ def plot_earth_and_planet(planet: str) -> Buffer:
     planet_coord = [get_body_heliographic_stonyhurst(
         this_planet, time=obstime) for this_planet in planet_list]
 
-    fig = plt.figure()
+    fig = plt.figure(figsize=(5, 5))
     ax = fig.add_subplot(projection='polar')
     for this_planet, this_coord in zip(planet_list, planet_coord):
         ax.plot(this_coord.lon.to('rad'), this_coord.radius, 'o', label=this_planet)
