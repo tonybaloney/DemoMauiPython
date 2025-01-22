@@ -8,7 +8,7 @@ namespace DemoMauiPython
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
-            var home = Path.Join(Environment.CurrentDirectory, "python");
+            var home = Path.Join(Environment.CurrentDirectory, "Contents", "Resources", "Python");
             builder
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
@@ -25,6 +25,7 @@ namespace DemoMauiPython
 #endif
             builder.Services.WithPython()
                 .WithHome(home)
+                .FromFolder("/Library/Frameworks/Python.Framework/Versions/3.12", "3.12")
                 .FromRedistributable()
                 .WithVirtualEnvironment(Path.Join(home, ".venv"))
                 .WithPipInstaller();
