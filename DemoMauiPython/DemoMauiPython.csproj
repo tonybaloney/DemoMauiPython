@@ -72,7 +72,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <AdditionalFiles Include="Resources\Raw\Python\*.py">
+	  <AdditionalFiles Include="Resources\Raw\Python\*.*">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </AdditionalFiles>
 	</ItemGroup>
@@ -101,12 +101,6 @@
 
 	<ItemGroup>
 	  <Folder Include="Views\" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Update="python\requirements.txt">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </None>
 	</ItemGroup>
 
 </Project>
