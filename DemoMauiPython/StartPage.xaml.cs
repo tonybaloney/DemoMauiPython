@@ -1,9 +1,14 @@
-﻿namespace DemoMauiPython;
+﻿using CSnakes.Runtime;
+
+namespace DemoMauiPython;
 
 public partial class StartPage : ContentPage
 {
-    public StartPage()
+    private readonly IPythonEnvironment pythonEnvironment;
+
+    public StartPage(IPythonEnvironment pythonEnvironment)
     {
+        this.pythonEnvironment = pythonEnvironment;
         InitializeComponent();
     }
     protected override async void OnAppearing()
@@ -37,7 +42,7 @@ public partial class StartPage : ContentPage
         var window = Application.Current.Windows.FirstOrDefault();
         if (window != null)
         {
-            window.Page = new NavigationPage(new PlanetsPage());
+            window.Page = new NavigationPage(new PlanetsPage(pythonEnvironment));
         }
     }
 

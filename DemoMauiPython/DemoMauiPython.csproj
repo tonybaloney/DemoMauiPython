@@ -64,11 +64,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="python\little_demo.py" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <AdditionalFiles Include="python\little_demo.py">
+	  <AdditionalFiles Include="python\space_plotter.py">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </AdditionalFiles>
 	</ItemGroup>
@@ -96,6 +92,12 @@
 
 	<ItemGroup>
 	  <Folder Include="Views\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="python\requirements.txt">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
 	</ItemGroup>
 
 </Project>

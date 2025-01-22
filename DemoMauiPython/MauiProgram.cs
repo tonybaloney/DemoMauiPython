@@ -26,6 +26,7 @@ namespace DemoMauiPython
             builder.Services.WithPython()
                 .WithHome(home)
                 .FromRedistributable()
+                .WithVirtualEnvironment(Path.Join(home, ".venv"))
                 .WithPipInstaller();
 
             return builder.Build();

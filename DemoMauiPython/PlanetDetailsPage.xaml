@@ -91,36 +91,14 @@
                 <Label
                     Style="{StaticResource PlanetHeaderSubtitleStyle}"
                     Text="Gallery" />
-
-                <CollectionView
-                    Margin="0,-6,0,0"
-                    HeightRequest="160"
-                    ItemsSource="{Binding Images}">
-
-                    <CollectionView.ItemsLayout>
-                        <LinearItemsLayout
-                            Orientation="Horizontal"
-                            ItemSpacing="16" />
-                    </CollectionView.ItemsLayout>
-
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Image
-                                Source="{Binding .}"
-                                Aspect="AspectFill"
-                                HorizontalOptions="Fill"
-                                VerticalOptions="Fill"
-                                WidthRequest="160">
-                                <Image.Clip>
-                                    <RoundRectangleGeometry
-                                        Rect="0,0,160,160"
-                                        CornerRadius="16" />
-                                </Image.Clip>
-                            </Image>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-
-                </CollectionView>
+                
+                <!-- Dynamic image render -->
+                <Image
+                    Source="{Binding PlanetImageSource}"
+                    Aspect="AspectFit"
+                    HorizontalOptions="Fill"
+                    HeightRequest="240"
+                    Margin="24,0" />
 
             </VerticalStackLayout>
 

@@ -1,16 +1,20 @@
-﻿using DemoMauiPython.Models;
+﻿using CSnakes.Runtime;
+using DemoMauiPython.Models;
 using DemoMauiPython.Services;
 
 namespace DemoMauiPython;
 
 public partial class PlanetsPage : ContentPage
 {
+    private readonly IPythonEnvironment pythonEnvironment;
+
     private const uint AnimationDuration = 800u;
 
-    public PlanetsPage()
+    public PlanetsPage(IPythonEnvironment pythonEnvironment)
 	{
 		InitializeComponent();
-	}
+        this.pythonEnvironment = pythonEnvironment;
+    }
 
     protected override void OnAppearing()
     {
@@ -20,9 +24,9 @@ public partial class PlanetsPage : ContentPage
         lstAllPlanets.ItemsSource = PlanetsService.GetAllPlanets();
     }
 
-    async void Planets_SelectionChanged(System.Object sender, Microsoft.Maui.Controls.SelectionChangedEventArgs e)
+    async void Planets_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-        await Navigation.PushAsync(new PlanetDetailsPage(e.CurrentSelection.First() as Planet));
+        await Navigation.PushAsync(new PlanetDetailsPage(e.CurrentSelection[0] as Planet, pythonEnvironment));
     }
 
     async void ProfilePic_Clicked(System.Object sender, System.EventArgs e)

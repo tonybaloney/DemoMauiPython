@@ -1,13 +1,14 @@
-﻿using DemoMauiPython.Models;
+﻿using CSnakes.Runtime;
+using DemoMauiPython.Models;
 
 namespace DemoMauiPython;
 
 public partial class PlanetDetailsPage : ContentPage
 {
-    public PlanetDetailsPage(Planet planet)
+    public PlanetDetailsPage(Planet planet, IPythonEnvironment pythonEnvironment)
     {
         InitializeComponent();
-
+        planet.SpacePlotter = pythonEnvironment.SpacePlotter(); // TODO : Find a better way to link the resources
         BindingContext = planet;
     }
 
